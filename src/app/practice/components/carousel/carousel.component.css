@@ -1,0 +1,5 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.carousel { display: flex; align-items: center; gap: 8px; }
+.carousel img { width: 220px; height: 130px; object-fit: cover; border-radius: 7px; }
+button { border: 1px solid #cbd5e1; border-radius: 7px; padding: 8px 10px; background: white; cursor: pointer; }
+button:hover { color: white; background: #2563eb; }

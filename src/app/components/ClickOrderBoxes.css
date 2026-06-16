@@ -1,0 +1,17 @@
+.click-order-boxes {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.order-box {
+  width: 70px;
+  height: 70px;
+  border: 2px solid black;
+  background: white;
+  cursor: pointer;
+}
+
+.order-box.active {
+  background: royalblue;
+}

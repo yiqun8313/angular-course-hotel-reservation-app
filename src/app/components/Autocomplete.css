@@ -1,0 +1,15 @@
+.autocomplete {
+  display: flex;
+  width: 260px;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.autocomplete button {
+  margin: 0;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  background: white;
+  cursor: pointer;
+}

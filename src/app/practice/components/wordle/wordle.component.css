@@ -1,0 +1,7 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.word-row { display: flex; gap: 5px; margin: 5px 0; }
+.word-row span { display: grid; width: 38px; height: 38px; place-items: center; color: white; border-radius: 5px; font-weight: bold; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+button, input { border: 1px solid #cbd5e1; border-radius: 7px; padding: 8px 10px; background: white; }
+button { cursor: pointer; }
+button:hover { color: white; background: #2563eb; }

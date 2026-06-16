@@ -1,0 +1,10 @@
+<h2>SnakeGame</h2>
+<p *ngIf="snakeOver">Game Over</p>
+<div class="snake-board">
+  <span
+    *ngFor="let cell of boardCells"
+    [class.snake]="isSnake(cell.x, cell.y)"
+    [class.food]="food.x === cell.x && food.y === cell.y"
+  ></span>
+</div>
+<button (click)="restartSnake()">Restart</button>

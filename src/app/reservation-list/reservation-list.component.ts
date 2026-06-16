@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ReservationService } from '../reservation/reservation.service';
+import { Component, computed, signal } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { selectAllReservations, selectTotalPrice } from '../state/reservation.selectors';
+import { deleteReservation } from '../state/reservation.actions';
 import { Reservation } from '../models/reservation';
 
 @Component({
@@ -7,18 +10,29 @@ import { Reservation } from '../models/reservation';
   templateUrl: './reservation-list.component.html',
   styleUrls: ['./reservation-list.component.css']
 })
-export class ReservationListComponent implements OnInit {
+export class ReservationListComponent {
 
-  reservations: Reservation[] = [];
+  readonly reservations = toSignal(this.store.select(selectAllReservations), { initialValue: [] as Reservation[] });
+  readonly totalPrice = toSignal(this.store.select(selectTotalPrice), { initialValue: 0 });
+  readonly filterName = signal('');
+  readonly filteredReservations = computed(() => {
+    const filterName = this.filterName().toLowerCase();
 
-  constructor(private reservationService: ReservationService){}
+    return this.reservations().filter(reservation =>
+      reservation.guestName.toLowerCase().includes(filterName) ||
+      reservation.guestEmail.toLowerCase().includes(filterName) ||
+      reservation.roomType.toLowerCase().includes(filterName) ||
+      reservation.roomNumber.toString().includes(filterName)
+    );
+  });
+  readonly title = signal('chris');
+  readonly subtitle = signal('manager');
+  fullname = computed(()=> `${this.title()} ${this.subtitle()}`);
 
-  ngOnInit(): void {
-    this.reservations = this.reservationService.getReservations();
-  }
+  constructor(private store: Store){}
 
   deleteReservation(id: string){
-    this.reservationService.deleteReservation(id);
+    this.store.dispatch(deleteReservation({ id }));
   }
 
 }

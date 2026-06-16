@@ -1,0 +1,5 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.calendar-head { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 10px; text-align: center; }
+button { border: 1px solid #cbd5e1; border-radius: 7px; padding: 8px 10px; background: white; cursor: pointer; }
+button:hover:not(:disabled), button.primary { color: white; background: #2563eb; }

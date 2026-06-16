@@ -1,0 +1,16 @@
+<h2>RecursiveItems / FileExplorer</h2>
+<ng-template #nodes let-items>
+  <ul>
+    <li *ngFor="let node of items">
+      <button class="tree-button" (click)="toggleNode(node)">
+        {{ node.children ? (node.open ? "📂" : "📁") : "📄" }} {{ node.name }}
+      </button>
+      <ng-container
+        *ngIf="node.open && node.children"
+        [ngTemplateOutlet]="nodes"
+        [ngTemplateOutletContext]="{ $implicit: node.children }"
+      ></ng-container>
+    </li>
+  </ul>
+</ng-template>
+<ng-container [ngTemplateOutlet]="nodes" [ngTemplateOutletContext]="{ $implicit: tree }"></ng-container>

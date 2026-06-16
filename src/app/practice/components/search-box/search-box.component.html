@@ -1,0 +1,5 @@
+<h2>SearchBox</h2>
+<input [(ngModel)]="search" (ngModelChange)="markDirty()" placeholder="Search fruit" />
+<button class="suggestion" *ngFor="let item of filteredFruit" (click)="selectSearch(item)">
+  {{ item }}
+</button>

@@ -1,0 +1,10 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+button { border: 1px solid #cbd5e1; border-radius: 7px; padding: 8px 10px; background: white; cursor: pointer; }
+button:hover { color: white; background: #2563eb; }
+.modal-overlay { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; background: #0008; }
+.modal-card { position: relative; max-width: 400px; padding: 28px; border-radius: 8px; background: white; }
+.modal-card h2 { margin-right: 28px; }
+.close { position: absolute; right: 8px; top: 8px; }
+.toast { position: fixed; z-index: 30; right: 20px; bottom: 20px; display: flex; gap: 10px; align-items: center; padding: 14px; color: white; border-radius: 8px; background: #172033; }
+.toast button { color: white; border-color: #ffffff55; background: transparent; }

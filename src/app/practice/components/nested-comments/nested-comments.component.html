@@ -1,0 +1,15 @@
+<h2>NestedComments</h2>
+<ng-template #commentTree let-items>
+  <article class="comment" *ngFor="let comment of items">
+    <p>{{ comment.text }}</p>
+    <div class="row">
+      <input [(ngModel)]="comment.reply" placeholder="Write a reply" />
+      <button (click)="addReply(comment)">Reply</button>
+    </div>
+    <ng-container
+      [ngTemplateOutlet]="commentTree"
+      [ngTemplateOutletContext]="{ $implicit: comment.replies }"
+    ></ng-container>
+  </article>
+</ng-template>
+<ng-container [ngTemplateOutlet]="commentTree" [ngTemplateOutletContext]="{ $implicit: comments }"></ng-container>

@@ -1,0 +1,8 @@
+<h2>ProgressBar</h2>
+<div class="progress-track">
+  <span [style.width.%]="progress">{{ progress }}%</span>
+</div>
+<div class="row">
+  <button (click)="adjustProgress(-1)">-1</button>
+  <button (click)="adjustProgress(1)">+1</button>
+</div>

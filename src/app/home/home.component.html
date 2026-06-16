@@ -2,4 +2,36 @@
     <h2 class="mb-4">Welcome to the Hotel Reservation Portal!</h2>
     <button class="btn btn-primary mx-2" [routerLink]="['/new']">Create a new reservation</button>
     <button class="btn btn-primary mx-2" [routerLink]="['/list']">View all reservations</button>
+    <button class="btn btn-secondary mx-2" [routerLink]="['/counter']">RxJS Counter</button>
+    <button class="btn btn-secondary mx-2" [routerLink]="['/star-wars-films']">Star Wars Films</button>
+    <button class="btn btn-success mx-2" [routerLink]="['/practice']">Angular 组件练习</button>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3">
+    <div class="card p-3">
+      <h5>预订总数</h5>
+      <p class="display-6">{{ reservationCount() }}</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card p-3">
+      <h5>总房价</h5>
+      <p class="display-6">{{ totalPrice() | currency:'USD' }}</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card p-3">
+      <h5>平均房价</h5>
+      <p class="display-6">{{ averagePrice() | currency:'USD' }}</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card p-3">
+      <h5>房型分布</h5>
+      <p>单人房 {{ roomSummary().single }}</p>
+      <p>双人房 {{ roomSummary().double }}</p>
+      <p>套房 {{ roomSummary().suite }}</p>
+    </div>
+  </div>
 </div>

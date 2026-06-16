@@ -1,0 +1,17 @@
+.virtual-list {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.virtual-list-space {
+  position: relative;
+}
+
+.virtual-list-item {
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}

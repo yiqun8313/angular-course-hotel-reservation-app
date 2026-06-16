@@ -1,0 +1,7 @@
+<h2>Accordion</h2>
+<div class="accordion-item" *ngFor="let item of accordionItems; let i = index">
+  <button (click)="openAccordion = openAccordion === i ? null : i">
+    {{ item.title }} <b>{{ openAccordion === i ? "-" : "+" }}</b>
+  </button>
+  <p *ngIf="openAccordion === i">{{ item.content }}</p>
+</div>

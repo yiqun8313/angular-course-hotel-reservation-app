@@ -1,0 +1,13 @@
+.infinite-scroll {
+  width: 300px;
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.infinite-item {
+  height: 50px;
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+}

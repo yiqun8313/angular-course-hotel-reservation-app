@@ -1,0 +1,9 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.chat { height: 220px; overflow: auto; padding: 10px; border: 1px solid #ddd; border-radius: 7px; }
+.chat p { width: fit-content; max-width: 80%; padding: 8px; border-radius: 8px; background: #e2e8f0; }
+.chat p.user { margin-left: auto; color: white; background: #2563eb; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+button, input { border: 1px solid #cbd5e1; border-radius: 7px; padding: 8px 10px; background: white; }
+input { flex: 1 1 180px; }
+button { cursor: pointer; }
+button:hover:not(:disabled) { color: white; background: #2563eb; }

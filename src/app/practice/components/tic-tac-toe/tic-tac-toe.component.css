@@ -1,0 +1,6 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.tic-board { display: grid; grid-template-columns: repeat(3, 55px); gap: 4px; margin-bottom: 12px; }
+.tic-board button { height: 55px; font-size: 24px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+button { border: 1px solid #cbd5e1; border-radius: 7px; padding: 8px 10px; background: white; cursor: pointer; }
+button:hover:not(:disabled) { color: white; background: #2563eb; }

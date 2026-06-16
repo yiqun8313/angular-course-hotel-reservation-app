@@ -1,0 +1,6 @@
+<h2>Carousel</h2>
+<div class="carousel">
+  <button (click)="previousImage()">Prev</button>
+  <img [src]="carouselImages[carouselIndex]" [alt]="'Slide ' + (carouselIndex + 1)" />
+  <button (click)="nextImage()">Next</button>
+</div>

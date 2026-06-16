@@ -1,0 +1,11 @@
+<h2>OTPInput</h2>
+<div class="otp">
+  <input
+    *ngFor="let value of otp; let i = index"
+    [value]="value"
+    inputmode="numeric"
+    maxlength="1"
+    (input)="updateOtp($event, i)"
+  />
+</div>
+<p>OTP: {{ otp.join("") }}</p>

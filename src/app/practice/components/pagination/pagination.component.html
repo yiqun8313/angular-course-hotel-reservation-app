@@ -1,0 +1,9 @@
+<h2>Pagination</h2>
+<ul>
+  <li *ngFor="let item of visibleItems">{{ item }}</li>
+</ul>
+<div class="row">
+  <button (click)="page = page - 1" [disabled]="page === 1">Prev</button>
+  <button *ngFor="let p of pages" (click)="page = p" [class.primary]="page === p">{{ p }}</button>
+  <button (click)="page = page + 1" [disabled]="page === pages.length">Next</button>
+</div>

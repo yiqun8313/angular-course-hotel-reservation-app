@@ -1,0 +1,9 @@
+<h2>DropdownList</h2>
+<div class="dropdown">
+  <button (click)="dropdownOpen = !dropdownOpen">{{ fruit || "Select a fruit" }} ▾</button>
+  <div class="menu" *ngIf="dropdownOpen">
+    <button *ngFor="let option of options" (click)="fruit = option.value; dropdownOpen = false">
+      {{ option.label }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.counter-page {
+  margin: 48px auto;
+  max-width: 420px;
+  text-align: center;
+}
+
+.counter-value {
+  font-size: 64px;
+  font-weight: 700;
+  margin: 24px 0;
+}
+
+.counter-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}

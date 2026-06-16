@@ -1,0 +1,4 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.scroll-list { height: 250px; overflow: auto; border: 1px solid #ddd; border-radius: 7px; }
+.scroll-list div { height: 44px; padding: 10px; border-bottom: 1px solid #eee; }
+p { padding: 10px; color: #64748b; }

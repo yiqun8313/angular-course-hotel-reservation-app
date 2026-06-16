@@ -1,0 +1,3 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.stars button { border: 0; padding: 0; color: #cbd5e1; background: white; font-size: 34px; cursor: pointer; }
+.stars button.filled { color: #f5b301; }

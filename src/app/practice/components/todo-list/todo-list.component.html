@@ -1,0 +1,12 @@
+<h2>ToDoList</h2>
+<div class="row">
+  <input [(ngModel)]="task" (keyup.enter)="addTask()" placeholder="Please input a task" />
+  <button (click)="addTask()">Submit</button>
+</div>
+<ul>
+  <li *ngFor="let item of tasks; let i = index">
+    <span (click)="removeTask(i)">{{ item }}</span>
+    <button (click)="moveTask(i, -1)" [disabled]="i === 0">Up</button>
+    <button (click)="moveTask(i, 1)" [disabled]="i === tasks.length - 1">Down</button>
+  </li>
+</ul>

@@ -1,0 +1,5 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+ul { margin: 0; padding-left: 18px; }
+li { margin: 6px 0; }
+.tree-button { border: 0; border-radius: 7px; padding: 6px 8px; background: white; cursor: pointer; }
+.tree-button:hover { background: #e8f0ff; }

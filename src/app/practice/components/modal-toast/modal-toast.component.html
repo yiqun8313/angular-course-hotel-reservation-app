@@ -1,0 +1,18 @@
+<h2>Modal / Toast</h2>
+<div class="row">
+  <button (click)="modalOpen = true">Open Modal</button>
+  <button (click)="showToast()">Show Toast</button>
+</div>
+
+<div class="modal-overlay" *ngIf="modalOpen" (click)="modalOpen = false">
+  <div class="modal-card" (click)="$event.stopPropagation()">
+    <button class="close" (click)="modalOpen = false">×</button>
+    <h2>Example Modal</h2>
+    <p>Click outside, press Escape, or click × to close.</p>
+  </div>
+</div>
+
+<div class="toast" *ngIf="toastOpen">
+  Changes saved successfully!
+  <button (click)="toastOpen = false">×</button>
+</div>

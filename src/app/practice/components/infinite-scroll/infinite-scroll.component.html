@@ -1,0 +1,5 @@
+<h2>InfiniteScroll</h2>
+<div class="scroll-list" (scroll)="loadMore($event)">
+  <div *ngFor="let item of infiniteItems">Item {{ item }}</div>
+  <p>Loading more...</p>
+</div>

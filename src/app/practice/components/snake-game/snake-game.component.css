@@ -1,0 +1,11 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.snake-board { display: grid; grid-template-columns: repeat(20, 14px); width: max-content; gap: 1px; margin-bottom: 12px; background: #cbd5e1; }
+.snake-board span { width: 14px; height: 14px; background: white; }
+.snake-board .snake { background: #16a34a; }
+.snake-board .food { background: #dc2626; }
+button { border: 1px solid #cbd5e1; border-radius: 7px; padding: 8px 10px; background: white; cursor: pointer; }
+button:hover { color: white; background: #2563eb; }
+@media (max-width: 760px) {
+  .snake-board { grid-template-columns: repeat(20, 10px); }
+  .snake-board span { width: 10px; height: 10px; }
+}

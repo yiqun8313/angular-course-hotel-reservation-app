@@ -1,0 +1,6 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.progress-track { height: 24px; overflow: hidden; margin-bottom: 12px; border-radius: 12px; background: #e2e8f0; }
+.progress-track span { display: block; height: 100%; color: white; background: #2563eb; text-align: center; }
+.row { display: flex; gap: 8px; }
+button { border: 1px solid #cbd5e1; border-radius: 7px; padding: 8px 10px; background: white; cursor: pointer; }
+button:hover { color: white; background: #2563eb; }

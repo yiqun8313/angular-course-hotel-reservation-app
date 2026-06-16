@@ -1,0 +1,15 @@
+<h2>Wordle</h2>
+<div class="word-row" *ngFor="let guess of guesses">
+  <span *ngFor="let letter of guess.split(''); 
+      let i = index" 
+      [style.background]="wordColor(letter, i)">
+    {{ letter }}
+  </span>
+</div>
+<div class="row">
+  <input [(ngModel)]="wordValue" maxlength="5" [disabled]="wordWon || guesses.length === 5" />
+  <button (click)="submitWord()">Submit</button>
+  <button (click)="resetWord()">Reset</button>
+</div>
+<p *ngIf="wordWon">You have won</p>
+<p *ngIf="!wordWon && guesses.length === 5">You have lost</p>

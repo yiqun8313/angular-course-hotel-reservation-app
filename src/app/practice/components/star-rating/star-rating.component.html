@@ -1,0 +1,13 @@
+<h2>StarRating</h2>
+<div class="stars">
+  <button
+    *ngFor="let star of stars"
+    (click)="rating = star"
+    (mouseenter)="hoverRating = star"
+    (mouseleave)="hoverRating = 0"
+    [class.filled]="star <= (hoverRating || rating)"
+  >
+    ★
+  </button>
+</div>
+<p>Rating: {{ rating }}</p>

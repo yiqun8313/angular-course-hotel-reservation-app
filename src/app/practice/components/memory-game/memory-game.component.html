@@ -1,0 +1,8 @@
+<h2>MemoryGame</h2>
+<div class="memory-board">
+  <button *ngFor="let card of cards; let i = index" (click)="flipCard(i)">
+    {{ showCard(i) ? card : "?" }}
+  </button>
+</div>
+<p *ngIf="matched.length === cards.length">You win!</p>
+<button (click)="resetGame()">Reset</button>

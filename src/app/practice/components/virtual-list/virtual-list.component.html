@@ -1,0 +1,8 @@
+<h2>VirtualList</h2>
+<div class="virtual-list" (scroll)="updateVirtual($event)">
+  <div class="virtual-space">
+    <div class="virtual-row" *ngFor="let row of virtualVisible" [style.top.px]="row * 40">
+      Row {{ row + 1 }}
+    </div>
+  </div>
+</div>

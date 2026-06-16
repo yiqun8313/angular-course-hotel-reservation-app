@@ -1,0 +1,5 @@
+<h2>Autocomplete</h2>
+<input [(ngModel)]="autocomplete" (ngModelChange)="updateAutocomplete()" placeholder="Search technology" />
+<button class="suggestion" *ngFor="let item of suggestions" (click)="selectSuggestion(item)">
+  {{ item }}
+</button>

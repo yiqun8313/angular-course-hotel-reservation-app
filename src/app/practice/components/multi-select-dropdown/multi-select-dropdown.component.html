@@ -1,0 +1,10 @@
+<h2>MultiSelectDropdown</h2>
+<div class="dropdown">
+  <button (click)="multiOpen = !multiOpen">{{ selectedFruits.join(", ") || "Select options" }} ▾</button>
+  <div class="menu" *ngIf="multiOpen">
+    <label *ngFor="let option of options">
+      <input type="checkbox" [checked]="selectedFruits.includes(option.value)" (change)="toggleFruit(option.value)" />
+      {{ option.label }}
+    </label>
+  </div>
+</div>

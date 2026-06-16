@@ -1,0 +1,9 @@
+<h2>TrafficLights</h2>
+<div class="traffic" (click)="toggleLights()">
+  <span
+    *ngFor="let light of lights; let i = index"
+    [style.background]="i === activeLight ? light.color : '#313131'"
+    [class.dim]="i !== activeLight"
+  ></span>
+</div>
+<p>Current: {{ lights[activeLight].color }} (click to {{ lightsPaused ? "resume" : "pause" }})</p>

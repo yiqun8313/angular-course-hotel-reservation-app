@@ -1,6 +1,20 @@
 <app-home></app-home>
 
 <h3 class="mt-5 mb-3">Reservation List</h3>
+{{fullname()}}
+<div class="mb-3">
+  <span class="badge bg-info text-dark me-2">总价：{{ totalPrice() | currency:'USD' }}</span>
+  <span class="badge bg-secondary">房间数：{{ reservations().length }}</span>
+</div>
+
+<div class="mb-3">
+  <input
+    class="form-control"
+    type="search"
+    placeholder="Search reservation"
+    [value]="filterName()"
+    (input)="filterName.set($any($event.target).value)">
+</div>
 
 <table class="table table-striped">
     <thead>
@@ -8,18 +22,26 @@
             <th>Guest</th>
             <th>Email</th>
             <th>Room No.</th>
+            <th>类型</th>
+            <th>Price/Night</th>
+            <th>Nights</th>
+            <th>Total</th>
             <th>Check-In</th>
             <th>Check-Out</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let reservation of reservations">
-            <td>{{reservation.guestName}}</td>
-            <td>{{reservation.guestEmail}}</td>
-            <td>{{reservation.roomNumber}}</td>
-            <td> {{reservation.checkInDate}} </td>
-            <td>{{reservation.checkOutDate}}</td>
+        <tr *ngFor="let reservation of filteredReservations()">
+            <td>{{ reservation.guestName }}</td>
+            <td>{{ reservation.guestEmail }}</td>
+            <td>{{ reservation.roomNumber }}</td>
+            <td>{{ reservation.roomType }}</td>
+            <td>{{ reservation.pricePerNight | currency:'USD' }}</td>
+            <td>{{ reservation.nights }}</td>
+            <td>{{ reservation.totalPrice | currency:'USD' }}</td>
+            <td>{{ reservation.checkInDate }}</td>
+            <td>{{ reservation.checkOutDate }}</td>
             <td>
                 <button class="btn btn-sm btn-danger mx-1" (click)="deleteReservation(reservation.id)">Delete</button>
                 <button class="btn btn-sm btn-secondary mx-1" [routerLink]="['/edit', reservation.id]">Edit</button>
@@ -28,11 +50,10 @@
     </tbody>
 </table>
 
-<ul *ngIf="reservations.length; else noReservation">
-
-</ul>
-
-<ng-template #noReservation>
+<ng-container *ngIf="reservations().length === 0">
     <p>No reservation available.</p>
-</ng-template>
+</ng-container>
 
+<ng-container *ngIf="reservations().length > 0 && filteredReservations().length === 0">
+    <p>No matching reservation.</p>
+</ng-container>

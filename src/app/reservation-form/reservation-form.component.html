@@ -48,6 +48,27 @@
                 Room Number is required.
             </small>
         </div>
+        <div class="col-3">
+            <label class="form-label">Room Type:</label>
+            <select class="form-select" formControlName="roomType">
+                <option *ngFor="let type of roomTypes" [value]="type">{{ type }}</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label class="form-label">Price / Night:</label>
+            <input class="form-control" type="text" [value]="pricePerNight() | currency:'USD'" readonly>
+        </div>
+        <div class="col-3">
+            <label class="form-label">Nights:</label>
+            <input class="form-control" type="text" [value]="nights()" readonly>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-3">
+            <label class="form-label">Total Price:</label>
+            <input class="form-control" type="text" [value]="totalPrice() | currency:'USD'" readonly>
+        </div>
     </div>
 
     <button class="btn btn-primary" type="submit" [disabled]="reservationForm.invalid">Submit</button>

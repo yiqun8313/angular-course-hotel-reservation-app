@@ -1,0 +1,9 @@
+<h2>ChatUI</h2>
+<div class="chat">
+  <p *ngFor="let message of messages" [class.user]="message.role === 'user'">{{ message.text }}</p>
+  <em *ngIf="replying">Assistant is typing...</em>
+</div>
+<div class="row">
+  <input [(ngModel)]="chatInput" (keyup.enter)="sendMessage()" placeholder="Message ChatGPT" />
+  <button (click)="sendMessage()" [disabled]="replying">Send</button>
+</div>

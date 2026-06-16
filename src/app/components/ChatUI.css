@@ -1,0 +1,50 @@
+.chat-ui {
+  width: min(500px, 100%);
+  margin: 20px 0;
+}
+
+.chat-messages {
+  min-height: 300px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  background: white;
+}
+
+.chat-message {
+  display: flex;
+  margin: 8px 0;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message span {
+  max-width: 75%;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: #eee;
+}
+
+.chat-message.user span {
+  color: white;
+  background: royalblue;
+}
+
+.chat-status {
+  color: #777;
+}
+
+.chat-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.chat-form input {
+  flex: 1;
+}
+
+.chat-form button {
+  margin: 0;
+}

@@ -1,0 +1,4 @@
+h2 { font-size: 18px; margin: 0 0 16px; }
+.click-boxes { display: flex; gap: 8px; }
+.click-boxes button { width: 52px; height: 52px; border: 1px solid #cbd5e1; border-radius: 7px; background: white; cursor: pointer; }
+.click-boxes button.active { color: white; background: #2563eb; }

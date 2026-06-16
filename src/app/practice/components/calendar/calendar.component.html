@@ -1,0 +1,18 @@
+<h2>Calendar</h2>
+<div class="calendar-head">
+  <button (click)="changeMonth(-1)">上一月</button>
+  <b>{{ calendarYear }} 年 {{ calendarMonth + 1 }} 月</b>
+  <button (click)="changeMonth(1)">下一月</button>
+</div>
+<div class="calendar-grid">
+  <b *ngFor="let day of weekDays">{{ day }}</b>
+  <button
+    *ngFor="let day of calendarDays"
+    [disabled]="!day"
+    [class.primary]="day === selectedDay"
+    (click)="selectedDay = day"
+  >
+    {{ day }}
+  </button>
+</div>
+<p *ngIf="selectedDay">选择日期：{{ calendarYear }}-{{ calendarMonth + 1 }}-{{ selectedDay }}</p>

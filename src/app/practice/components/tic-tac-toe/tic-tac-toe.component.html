@@ -1,0 +1,10 @@
+<h2>TicTacToe</h2>
+<p>{{ winner ? "获胜者: " + winner : "下一步: " + (xNext ? "X" : "O") }}</p>
+<div class="tic-board">
+  <button *ngFor="let value of board; let i = index" (click)="playSquare(i)">{{ value }}</button>
+</div>
+<div class="row">
+  <button (click)="travel(-1)" [disabled]="step === 0">Prev</button>
+  <button (click)="travel(1)" [disabled]="step === history.length - 1">Next</button>
+  <button (click)="resetTicTacToe()">Reset</button>
+</div>

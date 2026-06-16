@@ -1,0 +1,14 @@
+.pagination {
+  display: flex;
+  gap: 6px;
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin: 0;
+}
+
+.pagination .active-page {
+  color: white;
+  background: royalblue;
+}

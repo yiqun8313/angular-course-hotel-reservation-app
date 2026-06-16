@@ -1,0 +1,6 @@
+<h2>ClickOrderBoxes</h2>
+<div class="click-boxes">
+  <button *ngFor="let box of boxes" (click)="clickBox(box)" [class.active]="clickOrder.includes(box)">
+    {{ clickOrder.indexOf(box) + 1 || "" }}
+  </button>
+</div>

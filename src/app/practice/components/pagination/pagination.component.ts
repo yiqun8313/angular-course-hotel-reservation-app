@@ -14,3 +14,4 @@ export class PaginationComponent {
     return this.allItems.slice((this.page - 1) * 5, this.page * 5);
   }
 }
+//get 用来定义一个“计算出来的属性”。看起来像变量，用起来像变量，但背后其实会运行一段函数逻辑。
